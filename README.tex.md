@@ -1,24 +1,6 @@
 # DTS-parser
-**Table of content**
 
-[1.1 Introduction](#11-introduction)  
-[1.2 DTS streams](#12-dts-streams)  
-[1.3 A generic bitstream parser](#13-a-generic-bitstream-parser)  
-[1.3.1 DTS WAV ](#131-dts-wav)  
-[1.3.2 Regular DTS](#132-regular-dts)  
-[1.3.3 End of stream](#133-end-of-stream)  
-  
-  
-[1.4 The DTS parser](#14-the-dts-parser)  
-[1.5 A generic bitstream writer](#15-a-generic-bitstream-writer)  
-  
-  
-[2 Notes about the Visual Studio project](#2-notes-about-the-visual-studio-project)  
-
-
-
-
-## 1.1 Introduction
+## Introduction
 
 DTS is a famous audio format used in many places (DVD, Bluray, CD) allowing multichannel audio at high quality. 
 
@@ -30,7 +12,7 @@ This is an old C++ project based on MFC, made around 2006. I updated it to Visua
 
 ![image-20200907171424037](assets/image-20200907171424037.png)
 
-## 1.2 DTS streams
+## DTS streams
 
 DTS can be delivered in many forms:
 
@@ -40,11 +22,11 @@ DTS can be delivered in many forms:
 - As a WAV file containing a Little Endian 14 bit bitstream: each frame start by **0xFF1F00E8**
 - As a WAV file containing a Little Endian 16 bit bitstream: each frame start by **0xFE7F0180**
 
-## 1.3 A generic bitstream parser
+## A generic bitstream parser
 
 The class `BitStreamReader` is a general purpose bitstream reader. You can use it to read 1 or more bit from any file. 
 
-### 1.3.1 DTS WAV 
+### DTS WAV 
 
 If the file is a WAV, the class `WAVReader` will be used under the hood to load each buffer.
 
@@ -102,7 +84,7 @@ long WAVReader::ReadDTSStream(unsigned char *buffer, long length)
 }
 ```
 
-### 1.3.2 Regular DTS
+### Regular DTS
 
 `BitStreamReader` read the file using `fopen_s` in binary mode. We use an internal byte buffer called `m_bitbuffer`. Its size is fixed at **2048 bytes** and stored in `m_bitbuffer_size`.
 
@@ -156,11 +138,11 @@ unsigned int BitStreamReader::ReadBits(int count)
 }
 ```
 
-### 1.3.3 End of stream
+### End of stream
 
 We raise an exception `EOFBSException` when the end of the stream is reached.
 
-## 1.4 The DTS parser
+## The DTS parser
 
 The code is located in method `CDTSParserDlg::ParseDTS`, it  simply follows the DTS spec:
 
@@ -203,7 +185,7 @@ int suls = m_bitstr.ReadBit();
 int dial = m_bitstr.ReadBits(4);
 ```
 
-## 1.5 A generic bitstream writer
+## A generic bitstream writer
 
 We also provides a class `BitStreamWriter` to write any bitstream you want (You can't write DTS WAV with it). 
 
@@ -255,6 +237,6 @@ void BitStreamWriter::Close()
 }
 ```
 
-# 2 Notes about the Visual Studio project
+# Notes about the Visual Studio project
 
 Unicode is disabled as precompiled headers

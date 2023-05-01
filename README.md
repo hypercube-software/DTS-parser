@@ -1,22 +1,16 @@
 # DTS-parser
 **Table of content**
 
-[1.1 Introduction](#11-introduction)  
-[1.2 DTS streams](#12-dts-streams)  
-[1.3 A generic bitstream parser](#13-a-generic-bitstream-parser)  
-[1.3.1 DTS WAV ](#131-dts-wav)  
-[1.3.2 Regular DTS](#132-regular-dts)  
-[1.3.3 End of stream](#133-end-of-stream)  
-  
-  
-[1.4 The DTS parser](#14-the-dts-parser)  
-[1.5 A generic bitstream writer](#15-a-generic-bitstream-writer)  
-  
-  
+[1 DTS-parser](#dts-parser)  
+&nbsp;&nbsp;&nbsp;&nbsp;[1.1 Introduction](#11-introduction)  
+&nbsp;&nbsp;&nbsp;&nbsp;[1.2 DTS streams](#12-dts-streams)  
+&nbsp;&nbsp;&nbsp;&nbsp;[1.3 A generic bitstream parser](#13-a-generic-bitstream-parser)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.3.1 DTS WAV ](#131-dts-wav)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.3.2 Regular DTS](#132-regular-dts)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.3.3 End of stream](#133-end-of-stream)  
+&nbsp;&nbsp;&nbsp;&nbsp;[1.4 The DTS parser](#14-the-dts-parser)  
+&nbsp;&nbsp;&nbsp;&nbsp;[1.5 A generic bitstream writer](#15-a-generic-bitstream-writer)  
 [2 Notes about the Visual Studio project](#2-notes-about-the-visual-studio-project)  
-
-
-
 
 ## 1.1 Introduction
 
